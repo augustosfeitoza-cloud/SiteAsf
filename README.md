@@ -8,10 +8,8 @@ Site institucional da ASF Contabilidade. O site é estático (um `index.html` e 
 SiteAsf/
 ├── index.html          ← o site inteiro (textos, cores, formulário)
 └── assets/
-    ├── logo.png                  ← logo oficial (fundo transparente)
-    ├── favicon.png               ← ícone da aba do navegador
-    ├── post-escritorio.jpg       ← post do Instagram (pasta Comunicação)
-    └── post-simples-nacional.jpg ← post do Instagram (pasta Comunicação)
+    ├── logo.png    ← logo oficial (fundo transparente)
+    └── favicon.png ← ícone da aba do navegador
 ```
 
 ## 1. Publicar (opção recomendada: Netlify, gratuito)
@@ -59,9 +57,6 @@ Ao mudar essas duas linhas, o número e o e-mail mudam em todo o site (botões, 
 
 ## Identidade visual
 
-Segue os materiais da pasta **1. ASF Contabil › 5. Comunicacao** do Google Drive:
-
-- Verde ASF `#006553`, cinza de fundo `#D9D9D9`, grafite `#373738` e azul-marinho `#000040` (selo "conte conosco!").
-- Títulos em Montserrat ExtraBold, caixa alta e verde; lista de serviços em fonte serifada (Lora) caixa alta sobre a faixa verde, como no post "Nossos serviços".
-- Frase da marca em itálico: "Tranquilidade, agilidade e confiança."
-- Elementos gráficos dos posts: círculos concêntricos, régua verde vertical à esquerda, pontilhado e barra verde de WhatsApp.
+- Fonte única: **Montserrat** (Google Fonts), pesos 400 a 800.
+- Cores tiradas do logo oficial: verde ASF `#006553`, verde-escuro `#00352B` (faixas e contato), grafite `#373738` e verde-claro `#EEF5F3` para fundos.
+- Logo oficial da pasta *LOGO* do Drive. Nenhuma imagem dos posts do Instagram é usada; o painel ilustrativo do topo é feito em HTML.

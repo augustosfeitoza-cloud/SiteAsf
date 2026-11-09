@@ -3,197 +3,263 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ASF Contabilidade | Tranquilidade, agilidade e confiança</title>
-<meta name="description" content="ASF Contabilidade em São Paulo: abertura de MEI e empresas em 5 dias, alterações, certificado digital, certidões, manutenção mensal e IRPF. Fale com a gente pelo WhatsApp.">
+<title>ASF Contabilidade | Contabilidade para empresas em São Paulo</title>
+<meta name="description" content="ASF Contabilidade: abertura de MEI e empresas em 5 dias em São Paulo, manutenção mensal, certificado digital, certidões e IRPF. Fale com a gente pelo WhatsApp.">
 <meta property="og:title" content="ASF Contabilidade">
-<meta property="og:description" content="Tranquilidade, agilidade e confiança. Abertura de empresa em 5 dias na cidade de São Paulo.">
+<meta property="og:description" content="Contabilidade próxima, ágil e confiável para a sua empresa.">
 <meta property="og:image" content="assets/logo.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <style>
-  /* Identidade visual ASF — extraída dos posts e do timbrado da pasta "5. Comunicacao" */
   :root{
-    --verde:#006553;      /* verde ASF (logo, faixas, títulos) */
-    --verde-esc:#004d3f;
-    --verde-claro:#82B598;/* tom claro dos posts */
-    --cinza-fundo:#D9D9D9;/* fundo cinza dos posts */
-    --cinza-suave:#ECECEC;
+    --verde:#006553;      /* verde do logo */
+    --verde-700:#00513f;
+    --verde-900:#00352b;  /* seções escuras */
+    --verde-50:#EEF5F3;
+    --menta:#7FD6BE;      /* destaque sobre fundo escuro */
     --grafite:#373738;    /* "A" e "F" do logo */
-    --texto:#1e1e1e;
-    --marinho:#000040;    /* selo "conte conosco!" */
+    --tinta:#15191A;
+    --texto:#4A5052;
+    --linha:#E3E8E6;
+    --fundo:#F6F8F7;
     --wpp:#25D366;
+    --raio:18px;
+    --sombra:0 1px 2px rgba(16,24,22,.04),0 12px 32px rgba(16,24,22,.08);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:Poppins,system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.6;font-size:17px;overflow-x:hidden}
+  body{font-family:Montserrat,system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.65;font-size:16.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
-  .wrap{width:min(1140px,100% - 32px);margin-inline:auto;position:relative}
-  section{padding:88px 0;position:relative}
+  .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+  section{padding:104px 0}
+  h1,h2,h3{color:var(--tinta);line-height:1.15;letter-spacing:-.025em;font-weight:800}
+  h2{font-size:clamp(30px,4vw,44px)}
+  .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--verde);margin-bottom:16px}
+  .tag::before{content:"";width:22px;height:2px;background:currentColor}
+  .lead{font-size:18px;max-width:600px}
+  .cab{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+  .cab .lead{max-width:440px}
 
-  /* Tipografia dos posts */
-  .titulo{font-family:Montserrat,sans-serif;font-weight:800;text-transform:uppercase;color:var(--verde);line-height:1.1;letter-spacing:.01em;font-size:clamp(28px,4.2vw,44px)}
-  .selo{display:inline-block;background:var(--marinho);color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(18px,2.2vw,24px);padding:6px 20px;border-radius:12px;line-height:1.3}
-  .italico{font-style:italic;font-weight:600;color:var(--verde);font-size:clamp(18px,2.2vw,24px);line-height:1.35}
-  .regua{border-left:4px solid var(--verde);padding-left:clamp(20px,4vw,48px)}
-
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:12px;font-family:Montserrat,sans-serif;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.03em;border:0;cursor:pointer;transition:.2s}
-  .btn svg{width:22px;height:22px;flex:none}
-  .btn-verde{background:var(--verde);color:#fff}
-  .btn-verde:hover{background:var(--verde-esc)}
-  .btn-wpp{background:var(--wpp);color:#fff}
-  .btn-wpp:hover{filter:brightness(.93)}
-
-  /* Círculos concêntricos dos posts */
-  .circulos{position:absolute;pointer-events:none;width:340px;height:340px;border-radius:50%;
-    background:repeating-radial-gradient(circle,transparent 0 22px,var(--verde) 22px 23.5px);opacity:.75;
-    -webkit-mask:radial-gradient(circle,#000 0 69%,transparent 70%);mask:radial-gradient(circle,#000 0 69%,transparent 70%)}
-  /* Pontilhado dos posts */
-  .pontos{position:absolute;pointer-events:none;width:150px;height:110px;background:radial-gradient(circle,var(--grafite) 2.5px,transparent 3px) 0 0/18px 18px;opacity:.55}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:12px;font-family:inherit;font-weight:700;font-size:15.5px;border:1.5px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-p{background:var(--verde);color:#fff}
+  .btn-p:hover{background:var(--verde-700);transform:translateY(-1px)}
+  .btn-s{border-color:var(--linha);color:var(--tinta);background:#fff}
+  .btn-s:hover{border-color:var(--verde);color:var(--verde)}
+  .btn-w{background:var(--wpp);color:#073b1f}
+  .btn-w:hover{filter:brightness(.95);transform:translateY(-1px)}
+  .seta{transition:.2s}
+  .btn:hover .seta{transform:translateX(3px)}
 
   /* Header */
-  header{position:sticky;top:0;z-index:50;background:var(--cinza-fundo);border-bottom:4px solid var(--verde)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
-  .nav img{height:52px;width:auto}
-  .menu{display:flex;gap:26px;align-items:center;font-family:Montserrat,sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;color:var(--grafite)}
-  .menu a:not(.btn):hover{color:var(--verde)}
-  .menu .btn{padding:10px 18px;font-size:13px}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:.2s}
+  header.rolou{border-color:var(--linha)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .nav img{height:44px;width:auto}
+  .menu{display:flex;gap:34px;align-items:center;font-weight:600;font-size:15px;color:var(--grafite)}
+  .menu a:not(.btn){position:relative}
+  .menu a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--verde);transition:.2s}
+  .menu a:not(.btn):hover::after{right:0}
+  .menu .btn{padding:11px 20px;font-size:14.5px}
   .hamb{display:none;background:none;border:0;cursor:pointer;padding:8px}
-  .hamb span{display:block;width:26px;height:3px;background:var(--verde);margin:5px 0;border-radius:2px}
+  .hamb span{display:block;width:24px;height:2px;background:var(--tinta);margin:6px 0;border-radius:2px}
 
-  /* Hero — inspirado no post "Vai abrir sua empresa?" */
-  .hero{background:var(--cinza-fundo);overflow:hidden;padding:80px 0 96px}
-  .hero .circulos{right:-110px;top:-110px}
-  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
-  .hero h1{font-size:clamp(38px,6vw,68px);margin-bottom:18px}
-  .hero .selo{margin-bottom:34px}
-  .hero .italico{margin-bottom:6px}
-  .hero .sub{color:var(--verde);font-style:italic;font-weight:500;font-size:clamp(16px,1.9vw,20px);margin-bottom:34px}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-logo{background:#fff;border-radius:50%;aspect-ratio:1;display:grid;place-items:center;padding:16%;box-shadow:0 18px 40px rgba(0,0,0,.12);max-width:420px;width:100%;justify-self:center;position:relative;z-index:1}
+  /* Hero */
+  .hero{padding:72px 0 96px;background:
+      radial-gradient(900px 480px at 85% 10%,rgba(0,101,83,.10),transparent 60%),
+      linear-gradient(#fff,var(--fundo))}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--linha);border-radius:999px;padding:7px 16px 7px 8px;font-size:14px;font-weight:600;color:var(--grafite);margin-bottom:26px;box-shadow:var(--sombra)}
+  .pill b{white-space:nowrap;background:var(--verde);color:#fff;border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.04em}
+  .hero h1{font-size:clamp(40px,5.6vw,66px);margin-bottom:22px}
+  .hero h1 span{color:var(--verde)}
+  .hero .lead{margin-bottom:36px}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .garantias{display:flex;gap:26px;flex-wrap:wrap;margin-top:40px;font-size:14.5px;font-weight:600;color:var(--grafite)}
+  .garantias span{display:flex;align-items:center;gap:8px}
+  .garantias svg{width:18px;height:18px;stroke:var(--verde)}
 
-  /* Serviços — inspirado no post "Nossos serviços" */
-  .servicos{background:var(--cinza-fundo);padding:0}
-  .servicos .topo{padding:72px 0 36px;text-align:center}
-  .faixa{background:var(--verde);color:#fff;padding:64px 0;position:relative;overflow:hidden}
-  .faixa .pontos{right:24px;bottom:12px;height:40px;background-image:radial-gradient(circle,#fff 2.5px,transparent 3px);opacity:.35}
-  .lista-serv{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .serv{border:1.5px solid rgba(255,255,255,.28);border-radius:16px;padding:28px 26px;transition:.2s}
-  .serv:hover{background:rgba(255,255,255,.08);border-color:#fff}
-  .serv h3{font-family:Lora,serif;font-weight:600;text-transform:uppercase;font-size:21px;line-height:1.25;margin-bottom:10px;display:flex;gap:12px;align-items:baseline}
-  .serv h3::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:#fff;transform:translateY(-3px)}
-  .serv p{color:#d7ebe5;font-size:15.5px}
-  .barra-wpp{background:var(--cinza-fundo);padding:30px 0}
-  .barra-wpp a{display:flex;align-items:center;gap:16px;background:var(--verde);color:#fff;border-radius:14px;padding:16px 24px;font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(18px,2.4vw,26px);transition:.2s}
-  .barra-wpp a:hover{background:var(--verde-esc)}
-  .barra-wpp .ico-wpp{width:46px;height:46px;border-radius:10px;background:var(--wpp);display:grid;place-items:center;flex:none}
-  .barra-wpp .ico-wpp svg{width:30px;height:30px}
-  .barra-wpp small{margin-left:auto;font-family:Poppins,sans-serif;font-weight:500;font-size:15px;opacity:.85}
+  /* Composição do hero (painel ilustrativo em HTML) */
+  .painel{position:relative;max-width:520px;justify-self:end;width:100%}
+  .painel .card{background:#fff;border:1px solid var(--linha);border-radius:22px;box-shadow:0 30px 60px -20px rgba(0,53,43,.25);padding:28px}
+  .painel .topo{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .painel .topo small{display:block;font-size:12.5px;font-weight:600;color:#7a8284;text-transform:uppercase;letter-spacing:.08em}
+  .painel .topo strong{font-size:19px;color:var(--tinta)}
+  .status{font-size:12.5px;font-weight:700;color:var(--verde);background:var(--verde-50);border-radius:999px;padding:6px 12px;display:flex;align-items:center;gap:6px}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 4px rgba(0,101,83,.15)}
+  .itens{list-style:none;display:grid;gap:10px}
+  .itens li{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--linha);border-radius:14px;font-weight:600;color:var(--tinta);font-size:15px}
+  .itens li small{margin-left:auto;font-weight:600;font-size:12.5px;color:#7a8284}
+  .ok{flex:none;width:28px;height:28px;border-radius:9px;background:var(--verde);display:grid;place-items:center}
+  .ok svg{width:15px;height:15px;stroke:#fff}
+  .itens li.pend .ok{background:#fff;border:1.5px dashed var(--verde)}
+  .flutua{position:absolute;background:var(--verde-900);color:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 20px 40px -12px rgba(0,53,43,.45);display:flex;gap:12px;align-items:center;font-size:14px;font-weight:600;line-height:1.35}
+  .flutua b{display:block;font-size:22px;color:var(--menta);font-weight:800}
+  .flutua.f1{left:-40px;bottom:-64px}
+  .painel{margin:40px 0 40px}
+  .flutua.f2{right:-22px;top:-58px;background:#fff;color:var(--tinta);border:1px solid var(--linha);box-shadow:var(--sombra)}
+  .flutua.f2 svg{width:30px;height:30px}
 
-  /* Sobre */
-  .sobre{overflow:hidden}
-  .sobre .circulos{left:-170px;bottom:-170px;opacity:.35}
-  .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .sobre p{color:#444;margin-top:16px}
-  .sobre .italico{margin-top:22px}
-  .posts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .posts img{border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.14)}
-  .posts img:last-child{margin-top:48px}
-  .valores{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
-  .valor{background:var(--cinza-suave);border-left:5px solid var(--verde);border-radius:12px;padding:22px}
-  .valor strong{display:block;font-family:Montserrat,sans-serif;font-weight:800;text-transform:uppercase;color:var(--verde);font-size:17px;margin-bottom:4px}
-  .valor span{color:#444;font-size:15px}
+  /* Faixa de diferenciais */
+  .faixa{background:var(--verde-900);color:#cfe3dd;padding:34px 0}
+  .faixa .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .faixa div div{display:flex;gap:14px;align-items:center;font-size:14.5px;line-height:1.4}
+  .faixa strong{display:block;color:#fff;font-size:16px}
+  .faixa svg{width:34px;height:34px;flex:none;stroke:var(--menta)}
+
+  /* Serviços — grade bento */
+  .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .serv{position:relative;border:1px solid var(--linha);border-radius:var(--raio);padding:30px;background:#fff;transition:.25s;display:flex;flex-direction:column}
+  .serv:hover{border-color:transparent;box-shadow:var(--sombra);transform:translateY(-4px)}
+  .serv .ico{width:50px;height:50px;border-radius:14px;background:var(--verde-50);display:grid;place-items:center;margin-bottom:22px}
+  .serv .ico svg{width:25px;height:25px;stroke:var(--verde)}
+  .serv h3{font-size:20px;margin-bottom:8px}
+  .serv p{font-size:15.5px}
+  .serv.largo{grid-column:1/-1;flex-direction:row;align-items:center;gap:24px}
+  .serv.largo .ico{margin:0;flex:none}
+  .serv.largo div{flex:1}
+  .serv.largo .btn{flex:none}
+  .serv.destaque{grid-row:span 2;background:var(--verde);border-color:var(--verde);color:#d7ece6}
+  .serv.destaque h3{color:#fff;font-size:26px}
+  .serv.destaque .ico{background:rgba(255,255,255,.12)}
+  .serv.destaque .ico svg{stroke:#fff}
+  .serv.destaque ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px;font-weight:600;color:#fff;font-size:15px}
+  .serv.destaque li{display:flex;gap:10px;align-items:center}
+  .serv.destaque li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--menta)}
+  .serv.destaque .btn{margin-top:auto;background:#fff;color:var(--verde);align-self:flex-start}
+
+  /* Para quem */
+  .quem{background:var(--fundo)}
+  .perfis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .perfil{background:#fff;border-radius:var(--raio);padding:34px 30px;border:1px solid var(--linha)}
+  .perfil .num{font-size:13px;font-weight:700;color:var(--verde);letter-spacing:.1em}
+  .perfil h3{font-size:22px;margin:10px 0 10px}
+  .perfil p{font-size:15.5px;margin-bottom:20px}
+  .perfil a{font-weight:700;color:var(--verde);font-size:15px;display:inline-flex;gap:6px;align-items:center}
+  .perfil a:hover .seta{transform:translateX(3px)}
 
   /* Como funciona */
-  .como{background:var(--cinza-fundo)}
-  .como .topo{text-align:center;margin-bottom:48px}
-  .passos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:p}
-  .passo{background:#fff;border-radius:16px;padding:28px 24px}
-  .passo::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--verde);color:#fff;font-family:Montserrat,sans-serif;font-weight:900;font-size:20px;margin-bottom:14px}
-  .passo h3{font-family:Montserrat,sans-serif;font-weight:800;text-transform:uppercase;color:var(--grafite);font-size:17px;margin-bottom:6px}
-  .passo p{color:#444;font-size:15px}
+  .linha-tempo{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
+  .linha-tempo::before{content:"";position:absolute;top:27px;left:28px;right:28px;height:2px;background:repeating-linear-gradient(90deg,var(--verde) 0 8px,transparent 8px 16px);opacity:.35}
+  .etapa{position:relative}
+  .etapa .n{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--verde);color:var(--verde);display:grid;place-items:center;font-weight:800;font-size:19px;margin-bottom:22px;position:relative}
+  .etapa:last-child .n{background:var(--verde);color:#fff}
+  .etapa h3{font-size:18px;margin-bottom:6px}
+  .etapa p{font-size:15px}
+
+  /* FAQ */
+  .faq{background:var(--fundo)}
+  .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+  details{border-bottom:1px solid var(--linha);padding:22px 0}
+  details:first-child{border-top:1px solid var(--linha)}
+  summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:700;color:var(--tinta);font-size:17px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid var(--linha);display:grid;place-items:center;color:var(--verde);font-size:20px;font-weight:600;transition:.2s;line-height:1}
+  details[open] summary::after{transform:rotate(45deg);background:var(--verde);color:#fff;border-color:var(--verde)}
+  details p{margin-top:12px;font-size:15.5px;max-width:640px}
 
   /* Contato */
-  .contato{background:var(--verde);color:#fff;overflow:hidden}
-  .contato .circulos{right:-140px;top:-140px;background:repeating-radial-gradient(circle,transparent 0 22px,#fff 22px 23.5px);opacity:.25}
-  .contato-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-  .contato .titulo{color:#fff}
-  .contato .selo{margin:16px 0 22px}
-  .contato .lead{color:#d7ebe5;font-size:18px}
-  .canais{display:grid;gap:14px;margin-top:30px}
-  .canal{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:16px 20px;transition:.2s}
-  a.canal:hover{background:rgba(255,255,255,.18)}
-  .canal svg{width:28px;height:28px;flex:none}
-  .canal small{display:block;color:#cfe5de;font-size:13px}
-  .canal b{font-size:17px;word-break:break-word;font-weight:600}
-  form{background:#fff;color:var(--texto);border-radius:20px;padding:34px;box-shadow:0 20px 50px rgba(0,0,0,.25);position:relative;z-index:1}
-  form h3{font-family:Montserrat,sans-serif;font-weight:800;text-transform:uppercase;color:var(--verde);font-size:22px;margin-bottom:2px}
-  form .sub{color:#555;font-size:15px;margin-bottom:22px}
+  .contato{background:var(--verde-900);color:#cfe3dd;position:relative;overflow:hidden}
+  .contato::before{content:"";position:absolute;width:720px;height:720px;border-radius:50%;right:-280px;top:-320px;background:radial-gradient(circle,rgba(127,214,190,.16),transparent 65%)}
+  .contato-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start;position:relative}
+  .contato h2{color:#fff}
+  .contato .tag{color:var(--menta)}
+  .contato .lead{color:#cfe3dd}
+  .canais{display:grid;gap:12px;margin-top:34px}
+  .canal{display:flex;gap:16px;align-items:center;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 18px;transition:.2s}
+  a.canal:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3)}
+  .canal .ci{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex:none}
+  .canal .ci svg{width:22px;height:22px}
+  .canal small{display:block;font-size:12.5px;color:#9fc2b8;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  .canal b{color:#fff;font-size:16.5px;font-weight:700;overflow-wrap:anywhere}
+  form{background:#fff;border-radius:24px;padding:38px;box-shadow:0 30px 60px -20px rgba(0,0,0,.4);color:var(--texto)}
+  form h3{font-size:24px;margin-bottom:4px}
+  form .sub{font-size:15px;margin-bottom:26px}
   .campos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .campo{display:flex;flex-direction:column;gap:6px}
+  .campo{display:flex;flex-direction:column;gap:7px}
   .full{grid-column:1/-1}
-  label{font-weight:600;font-size:14px;color:var(--grafite)}
-  input,textarea{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid #cfcfcf;border-radius:10px;background:#fff;color:var(--texto);width:100%}
-  input:focus,textarea:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,101,83,.15)}
-  textarea{min-height:96px;resize:vertical}
-  .interesse{display:flex;flex-wrap:wrap;gap:10px}
-  .interesse label{display:flex;gap:8px;align-items:center;font-weight:500;border:1.5px solid #cfcfcf;border-radius:999px;padding:8px 14px;cursor:pointer}
-  .interesse input{width:auto;accent-color:var(--verde)}
-  .lgpd{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#555;font-weight:400}
-  .lgpd input{width:auto;margin-top:3px;accent-color:var(--verde)}
-  .acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
-  .acoes .btn{flex:1;min-width:200px;white-space:nowrap;padding:14px 18px}
-  .msg{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;font-weight:600;font-size:15px}
-  .msg.ok{display:block;background:#e3f0ec;color:var(--verde-esc)}
+  label{font-weight:600;font-size:13.5px;color:var(--grafite)}
+  input,textarea{font:inherit;font-size:15.5px;padding:13px 15px;border:1.5px solid var(--linha);border-radius:12px;background:var(--fundo);color:var(--tinta);width:100%;transition:.15s}
+  input:focus,textarea:focus{outline:none;border-color:var(--verde);background:#fff;box-shadow:0 0 0 4px rgba(0,101,83,.12)}
+  textarea{min-height:100px;resize:vertical}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{position:relative;cursor:pointer}
+  .chips input{position:absolute;opacity:0;pointer-events:none}
+  .chips span{display:block;border:1.5px solid var(--linha);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px;color:var(--grafite);transition:.15s}
+  .chips input:checked+span{background:var(--verde);border-color:var(--verde);color:#fff}
+  .chips input:focus-visible+span{box-shadow:0 0 0 4px rgba(0,101,83,.18)}
+  .lgpd{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:13px;font-weight:500;color:#6b7274}
+  .lgpd input{width:18px;height:18px;margin-top:1px;accent-color:var(--verde);flex:none}
+  .acoes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+  .msg{display:none;margin-top:16px;padding:14px 16px;border-radius:12px;font-weight:600;font-size:14.5px}
+  .msg.ok{display:block;background:var(--verde-50);color:var(--verde-700)}
   .msg.erro{display:block;background:#fdecec;color:#9b1c1c}
   .hp{position:absolute;left:-9999px}
 
-  footer{background:var(--cinza-fundo);border-top:4px solid var(--verde);padding:34px 0;font-size:14px;color:var(--grafite)}
-  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  .foot img{height:48px;width:auto}
-  .foot b{color:var(--verde)}
+  footer{padding:44px 0;font-size:14px;border-top:1px solid var(--linha)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .foot img{height:40px;width:auto}
+  .foot nav{display:flex;gap:22px;font-weight:600;color:var(--grafite)}
+  .foot nav a:hover{color:var(--verde)}
 
-  .wpp-flutuante{position:fixed;right:20px;bottom:20px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--wpp);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:.2s}
+  .wpp-flutuante{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wpp);display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.22);transition:.2s}
   .wpp-flutuante:hover{transform:scale(1.07)}
-  .wpp-flutuante svg{width:34px;height:34px}
+  .wpp-flutuante svg{width:32px;height:32px}
 
-  @media (max-width:960px){
-    .hero-grid,.sobre-grid,.contato-grid{grid-template-columns:1fr}
-    .hero-logo{max-width:300px;justify-self:start}
-    .lista-serv,.passos{grid-template-columns:1fr 1fr}
+  /* Animação de entrada */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .rv.on{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:1020px){
+    .hero-grid,.contato-grid,.faq-grid{grid-template-columns:1fr}
+    .painel{justify-self:center;margin-top:20px}
+    .bento{grid-template-columns:1fr 1fr}
+    .serv.destaque{grid-row:auto;grid-column:1/-1}
+    .faixa .wrap{grid-template-columns:1fr 1fr}
+    .faq-grid{gap:32px}
   }
   @media (max-width:760px){
-    section{padding:60px 0}
-    .hero{padding:48px 0 64px}
-    .hero .circulos{width:220px;height:220px;right:-90px;top:-90px}
-    .hero-logo{display:none}
+    section{padding:72px 0}
+    .hero{padding:40px 0 80px}
     .hamb{display:block}
-    .menu{display:none;position:absolute;top:80px;left:0;right:0;background:var(--cinza-fundo);flex-direction:column;align-items:stretch;padding:16px;gap:6px;border-bottom:4px solid var(--verde)}
+    .menu{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 16px 18px;gap:4px;border-bottom:1px solid var(--linha);box-shadow:var(--sombra)}
     .menu.aberto{display:flex}
-    .menu a:not(.btn){padding:10px 8px}
-    .lista-serv,.passos,.valores,.campos{grid-template-columns:1fr}
-    .barra-wpp small{display:none}
-    .canal b{font-size:15px}
-    .posts img:last-child{margin-top:24px}
-    form{padding:24px}
+    .menu a:not(.btn){padding:12px 4px}
+    .menu a:not(.btn)::after{display:none}
+    .menu .btn{margin-top:8px}
+    .flutua.f1{left:-6px;bottom:-60px}
+    .serv.largo{flex-direction:column;align-items:flex-start}
+    .serv.largo .ico{margin-bottom:6px}
+    .flutua.f2{right:-6px}
+    .itens li small{display:none}
+    .bento,.perfis,.campos,.acoes{grid-template-columns:1fr}
+    .linha-tempo{grid-template-columns:1fr;gap:26px}
+    .linha-tempo::before{top:28px;bottom:28px;left:27px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--verde) 0 8px,transparent 8px 16px)}
+    .etapa{display:grid;grid-template-columns:56px 1fr;column-gap:20px}
+    .etapa .n{margin:0;grid-row:span 2}
+    .faixa .wrap{grid-template-columns:1fr}
+    form{padding:26px 20px}
+    .cab{margin-bottom:36px}
   }
 </style>
 </head>
 <body>
 
-<header>
+<header id="topo">
   <div class="wrap nav">
     <a href="#inicio" aria-label="ASF Contabilidade - início"><img src="assets/logo.png" alt="ASF Contabilidade"></a>
-    <button class="hamb" aria-label="Abrir menu" onclick="document.querySelector('.menu').classList.toggle('aberto')"><span></span><span></span><span></span></button>
-    <nav class="menu" onclick="if(event.target.tagName==='A')this.classList.remove('aberto')">
+    <button class="hamb" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="menu">
       <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
+      <a href="#para-quem">Para quem</a>
       <a href="#como-funciona">Como funciona</a>
-      <a href="#contato">Contato</a>
-      <a class="btn btn-verde" href="#contato">Seja cliente</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a class="btn btn-p" href="#contato">Fale conosco</a>
     </nav>
   </div>
 </header>
@@ -201,135 +267,198 @@
 <main id="inicio">
   <!-- HERO -->
   <section class="hero">
-    <div class="circulos" aria-hidden="true"></div>
     <div class="wrap hero-grid">
-      <div class="regua">
-        <h1 class="titulo">Vai abrir sua empresa?</h1>
-        <span class="selo">conte conosco!</span>
-        <p class="italico">Tranquilidade, agilidade e confiança.</p>
-        <p class="sub">Abertura em 5 dias para a cidade de São Paulo.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-wpp" data-wpp href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><use href="#i-wpp"/></svg>
-            Falar no WhatsApp
-          </a>
-          <a class="btn btn-verde" href="#contato">Quero uma proposta</a>
+      <div class="rv">
+        <span class="pill"><b>SÃO PAULO</b> Abertura de empresa em 5 dias</span>
+        <h1>Contabilidade que deixa sua empresa <span>em dia</span> e você tranquilo.</h1>
+        <p class="lead">Abertura, impostos, folha, certidões e declarações resolvidos por um contador que fala a sua língua — com atendimento direto pelo WhatsApp.</p>
+        <div class="ctas">
+          <a class="btn btn-p" href="#contato">Quero uma proposta <span class="seta">→</span></a>
+          <a class="btn btn-w" data-wpp href="#" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><use href="#i-wpp"/></svg>Chamar no WhatsApp</a>
+        </div>
+        <div class="garantias">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Contador com CRC/SP</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Atendimento humano</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>100% digital</span>
         </div>
       </div>
-      <div class="hero-logo"><img src="assets/logo.png" alt=""></div>
+
+      <div class="painel rv" aria-hidden="true">
+        <div class="card">
+          <div class="topo">
+            <div><small>Sua empresa</small><strong>Rotina do mês</strong></div>
+            <span class="status">Tudo em dia</span>
+          </div>
+          <ul class="itens">
+            <li><span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Impostos apurados<small>Guia enviada</small></li>
+            <li><span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Folha e pró-labore<small>Fechada</small></li>
+            <li><span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Certidões negativas<small>Válidas</small></li>
+            <li class="pend"><span class="ok"></span>Relatório do mês<small>Em preparo</small></li>
+          </ul>
+        </div>
+        <div class="flutua f1"><div><b>5 dias</b>para abrir sua<br>empresa em SP</div></div>
+        <div class="flutua f2"><svg viewBox="0 0 32 32" fill="#25D366"><use href="#i-wpp"/></svg>Respostas<br>pelo WhatsApp</div>
+      </div>
     </div>
   </section>
+
+  <!-- FAIXA -->
+  <div class="faixa">
+    <div class="wrap">
+      <div><div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><strong>Agilidade</strong>Prazos curtos e respostas rápidas</span></div></div>
+      <div><div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><strong>Confiança</strong>Contador registrado no CRC/SP</span></div></div>
+      <div><div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0v5a3 3 0 0 1-3 3h-1v-6h4M4 14h4v6H7a3 3 0 0 1-3-3z"/></svg><span><strong>Proximidade</strong>Você fala com quem cuida da sua empresa</span></div></div>
+      <div><div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M10 18h4"/></svg><span><strong>Digital</strong>Documentos e dúvidas de onde estiver</span></div></div>
+    </div>
+  </div>
 
   <!-- SERVIÇOS -->
-  <section id="servicos" class="servicos">
-    <div class="wrap topo"><h2 class="titulo">Nossos serviços</h2></div>
-    <div class="faixa">
-      <div class="pontos" aria-hidden="true"></div>
-      <div class="wrap lista-serv">
-        <div class="serv"><h3>Abertura de MEI</h3><p>Formalização do microempreendedor, emissão do CNPJ e orientação sobre DAS, nota fiscal e declaração anual.</p></div>
-        <div class="serv"><h3>Abertura e alterações de empresas</h3><p>Abertura em 5 dias na cidade de São Paulo, alterações contratuais, mudança de endereço, sócios e atividades.</p></div>
-        <div class="serv"><h3>Certificado digital</h3><p>Emissão e renovação de certificado digital e-CNPJ e e-CPF para a sua empresa e para você.</p></div>
-        <div class="serv"><h3>Certidões em geral</h3><p>Certidões negativas federais, estaduais, municipais e trabalhistas para licitações, bancos e contratos.</p></div>
-        <div class="serv"><h3>Manutenção mensal</h3><p>Contabilidade, impostos, folha de pagamento e obrigações em dia, com relatório mensal do seu resultado.</p></div>
-        <div class="serv"><h3>IRPF</h3><p>Declaração de Imposto de Renda Pessoa Física, revisão da pré-preenchida e regularização de pendências.</p></div>
+  <section id="servicos">
+    <div class="wrap">
+      <div class="cab rv">
+        <div><span class="tag">Serviços</span><h2>Tudo o que sua empresa precisa,<br>em um só lugar.</h2></div>
+        <p class="lead">Do primeiro CNPJ à declaração de Imposto de Renda, acompanhamos você em cada etapa.</p>
       </div>
-    </div>
-    <div class="barra-wpp">
-      <div class="wrap">
-        <a data-wpp href="#" target="_blank" rel="noopener">
-          <span class="ico-wpp"><svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><use href="#i-wpp"/></svg></span>
-          <span data-tel>(11) 97875-7407</span>
-          <small>Clique e fale com a gente →</small>
-        </a>
+      <div class="bento">
+        <article class="serv destaque rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></div>
+          <h3>Manutenção mensal</h3>
+          <p>A rotina completa da sua empresa, todo mês, sem você se preocupar com prazos.</p>
+          <ul>
+            <li>Contabilidade e balancetes</li>
+            <li>Apuração de impostos e guias</li>
+            <li>Folha de pagamento e pró-labore</li>
+            <li>Obrigações acessórias em dia</li>
+            <li>Relatório mensal do resultado</li>
+          </ul>
+          <a class="btn" href="#contato">Solicitar proposta <span class="seta">→</span></a>
+        </article>
+        <article class="serv rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+          <h3>Abertura e alterações de empresas</h3>
+          <p>Abertura em 5 dias na cidade de São Paulo, alterações de sócios, endereço, capital e atividades.</p>
+        </article>
+        <article class="serv rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21c.8-3.6 3.6-6 7-6s6.2 2.4 7 6"/></svg></div>
+          <h3>Abertura de MEI</h3>
+          <p>Formalização, CNPJ e orientação sobre DAS mensal, nota fiscal e declaração anual.</p>
+        </article>
+        <article class="serv rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="9" cy="12.5" r="2.5"/><path d="M14 11h4M14 14h3"/></svg></div>
+          <h3>Certificado digital</h3>
+          <p>Emissão e renovação de e-CNPJ e e-CPF para sua empresa e para você.</p>
+        </article>
+        <article class="serv rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></svg></div>
+          <h3>Certidões em geral</h3>
+          <p>Certidões negativas federais, estaduais, municipais e trabalhistas.</p>
+        </article>
+        <article class="serv largo rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2c-.4-1-1.5-1.7-2.8-1.7-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.5-.7-2.9-1.8M12 6v1.5M12 16.5V18"/></svg></div>
+          <div><h3>Imposto de Renda (IRPF)</h3>
+          <p>Declaração completa, revisão da pré-preenchida, aproveitamento de todas as deduções e regularização de pendências com a Receita.</p></div>
+          <a class="btn btn-s" href="#contato" data-interesse="IRPF">Declarar com a ASF <span class="seta">→</span></a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="sobre">
-    <div class="circulos" aria-hidden="true"></div>
+  <!-- PARA QUEM -->
+  <section id="para-quem" class="quem">
     <div class="wrap">
-      <div class="sobre-grid">
-        <div class="regua">
-          <h2 class="titulo">O que faz um escritório de contabilidade?</h2>
-          <p>Na ASF Contabilidade, cuidamos de toda a parte burocrática da sua empresa — abertura, impostos, folha, certidões e declarações — para você focar no que importa: o seu negócio.</p>
-          <p>Atendemos MEIs, micro e pequenas empresas e pessoas físicas, sempre com atendimento próximo e explicações em linguagem simples.</p>
-          <p class="italico">Tranquilidade, agilidade e confiança.</p>
-        </div>
-        <div class="posts">
-          <img src="assets/post-escritorio.jpg" alt="Post ASF: O que faz um escritório de contabilidade?" loading="lazy">
-          <img src="assets/post-simples-nacional.jpg" alt="Post ASF: Quem pode optar pelo Simples Nacional?" loading="lazy">
-        </div>
+      <div class="cab rv">
+        <div><span class="tag">Para quem</span><h2>Do MEI à empresa em crescimento.</h2></div>
+        <p class="lead">Atendimento sob medida para cada fase do seu negócio.</p>
       </div>
-      <div class="valores">
-        <div class="valor"><strong>Tranquilidade</strong><span>Obrigações e impostos controlados para você não levar multa.</span></div>
-        <div class="valor"><strong>Agilidade</strong><span>Abertura de empresa em 5 dias em São Paulo e respostas rápidas pelo WhatsApp.</span></div>
-        <div class="valor"><strong>Confiança</strong><span>Contador registrado no CRC/SP cuidando pessoalmente da sua empresa.</span></div>
+      <div class="perfis">
+        <div class="perfil rv"><span class="num">01</span><h3>MEI</h3><p>Formalize seu negócio, mantenha o DAS e a declaração anual em dia e saiba a hora certa de crescer para ME.</p><a href="#contato" data-interesse="Abrir MEI ou empresa">Quero formalizar <span class="seta">→</span></a></div>
+        <div class="perfil rv"><span class="num">02</span><h3>Micro e pequenas empresas</h3><p>Contabilidade, impostos e folha completos, com o regime tributário adequado ao seu faturamento.</p><a href="#contato" data-interesse="Trocar de contador">Quero uma proposta <span class="seta">→</span></a></div>
+        <div class="perfil rv"><span class="num">03</span><h3>Pessoa física</h3><p>Declaração de Imposto de Renda sem erro, aproveitando todas as deduções e evitando a malha fina.</p><a href="#contato" data-interesse="IRPF">Quero declarar <span class="seta">→</span></a></div>
       </div>
     </div>
   </section>
 
   <!-- COMO FUNCIONA -->
-  <section id="como-funciona" class="como">
+  <section id="como-funciona">
     <div class="wrap">
-      <div class="topo"><h2 class="titulo">Como funciona</h2></div>
-      <div class="passos">
-        <div class="passo"><h3>Contato</h3><p>Você preenche o formulário ou chama no WhatsApp.</p></div>
-        <div class="passo"><h3>Diagnóstico</h3><p>Entendemos a sua empresa e o que ela precisa.</p></div>
-        <div class="passo"><h3>Proposta</h3><p>Enviamos nossa apresentação e uma proposta sob medida.</p></div>
-        <div class="passo"><h3>Tudo em dia</h3><p>Cuidamos da transição e da rotina contábil daí em diante.</p></div>
+      <div class="cab rv">
+        <div><span class="tag">Como funciona</span><h2>Começar é simples.</h2></div>
+        <p class="lead">Se você já tem contador, nós cuidamos de toda a transição.</p>
+      </div>
+      <div class="linha-tempo">
+        <div class="etapa rv"><span class="n">1</span><h3>Contato</h3><p>Preencha o formulário ou chame no WhatsApp.</p></div>
+        <div class="etapa rv"><span class="n">2</span><h3>Diagnóstico</h3><p>Entendemos sua empresa e o que ela precisa.</p></div>
+        <div class="etapa rv"><span class="n">3</span><h3>Proposta</h3><p>Enviamos nossa apresentação e uma proposta sob medida.</p></div>
+        <div class="etapa rv"><span class="n">4</span><h3>Tudo em dia</h3><p>Assumimos a rotina e você foca no seu negócio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÚVIDAS -->
+  <section id="duvidas" class="faq">
+    <div class="wrap faq-grid">
+      <div class="rv">
+        <span class="tag">Dúvidas frequentes</span>
+        <h2>Perguntas que sempre recebemos.</h2>
+        <p class="lead" style="margin-top:16px">Não encontrou a sua? Fale com a gente pelo WhatsApp.</p>
+      </div>
+      <div class="rv">
+        <details open><summary>Quanto tempo leva para abrir uma empresa?</summary><p>Na cidade de São Paulo, a abertura leva em média 5 dias, depois que recebemos os documentos. Em outros municípios, o prazo depende dos órgãos locais.</p></details>
+        <details><summary>Posso trocar de contador a qualquer momento?</summary><p>Sim. Cuidamos da transição com o escritório anterior: pedimos os documentos, conferimos as pendências e assumimos a rotina sem interromper as obrigações da sua empresa.</p></details>
+        <details><summary>Como envio os documentos?</summary><p>Tudo de forma digital — por e-mail ou WhatsApp. Você não precisa ir ao escritório.</p></details>
+        <details><summary>Quanto custa a mensalidade?</summary><p>O valor depende do porte, da atividade e do número de funcionários da empresa. Preencha o formulário e enviamos uma proposta sob medida, sem compromisso.</p></details>
+        <details><summary>Vocês atendem MEI?</summary><p>Sim. Fazemos a formalização do MEI e acompanhamos o DAS mensal, a declaração anual e o limite de faturamento.</p></details>
       </div>
     </div>
   </section>
 
   <!-- CONTATO -->
   <section id="contato" class="contato">
-    <div class="circulos" aria-hidden="true"></div>
     <div class="wrap contato-grid">
-      <div>
-        <h2 class="titulo">Venha ser cliente ASF</h2>
-        <span class="selo">conte conosco!</span>
-        <p class="lead">Deixe seu e-mail e telefone que enviamos a nossa apresentação e marcamos uma conversa. Se preferir, chame agora no WhatsApp.</p>
+      <div class="rv">
+        <span class="tag">Fale conosco</span>
+        <h2>Venha ser cliente ASF.</h2>
+        <p class="lead" style="margin-top:16px">Deixe seu e-mail e telefone que enviamos a nossa apresentação e marcamos uma conversa. Se preferir, chame agora no WhatsApp.</p>
         <div class="canais">
           <a class="canal" data-wpp href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 32 32" fill="#25D366" aria-hidden="true"><use href="#i-wpp"/></svg>
+            <span class="ci"><svg viewBox="0 0 32 32" fill="#25D366" aria-hidden="true"><use href="#i-wpp"/></svg></span>
             <div><small>WhatsApp</small><b data-tel>(11) 97875-7407</b></div>
           </a>
           <a class="canal" data-mail href="#">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#7FD6BE" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
             <div><small>E-mail</small><b data-email>asfcontabil@asfcontabil.com.br</b></div>
           </a>
           <div class="canal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#7FD6BE" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
             <div><small>Atendimento</small><b>São Paulo/SP</b></div>
           </div>
         </div>
       </div>
 
-      <form id="form-contato" novalidate>
+      <form id="form-contato" class="rv" novalidate>
         <h3>Receba nossa apresentação</h3>
-        <p class="sub">Preencha e retornamos o seu contato.</p>
+        <p class="sub">Preencha e entraremos em contato.</p>
         <div class="campos">
-          <div class="campo full"><label for="nome">Nome *</label><input id="nome" name="Nome" required autocomplete="name"></div>
-          <div class="campo"><label for="email">E-mail *</label><input id="email" name="E-mail" type="email" required autocomplete="email"></div>
+          <div class="campo full"><label for="nome">Nome *</label><input id="nome" name="Nome" required autocomplete="name" placeholder="Seu nome"></div>
+          <div class="campo"><label for="email">E-mail *</label><input id="email" name="E-mail" type="email" required autocomplete="email" placeholder="voce@empresa.com.br"></div>
           <div class="campo"><label for="tel">Telefone / WhatsApp *</label><input id="tel" name="Telefone" type="tel" required autocomplete="tel" placeholder="(11) 90000-0000"></div>
-          <div class="campo full"><label for="empresa">Empresa (se já tiver)</label><input id="empresa" name="Empresa" autocomplete="organization"></div>
+          <div class="campo full"><label for="empresa">Empresa <span style="font-weight:500;color:#8a9193">(opcional)</span></label><input id="empresa" name="Empresa" autocomplete="organization" placeholder="Nome da empresa"></div>
           <div class="campo full">
             <label>Tenho interesse em</label>
-            <div class="interesse">
-              <label><input type="radio" name="Interesse" value="Abrir MEI ou empresa"> Abrir MEI ou empresa</label>
-              <label><input type="radio" name="Interesse" value="Trocar de contador"> Trocar de contador</label>
-              <label><input type="radio" name="Interesse" value="Certificado digital / certidões"> Certificado / certidões</label>
-              <label><input type="radio" name="Interesse" value="IRPF"> IRPF</label>
-              <label><input type="radio" name="Interesse" value="Outro assunto"> Outro</label>
+            <div class="chips">
+              <label><input type="radio" name="Interesse" value="Abrir MEI ou empresa"><span>Abrir MEI ou empresa</span></label>
+              <label><input type="radio" name="Interesse" value="Trocar de contador"><span>Trocar de contador</span></label>
+              <label><input type="radio" name="Interesse" value="Certificado digital / certidões"><span>Certificado / certidões</span></label>
+              <label><input type="radio" name="Interesse" value="IRPF"><span>Imposto de Renda</span></label>
+              <label><input type="radio" name="Interesse" value="Outro assunto"><span>Outro</span></label>
             </div>
           </div>
-          <div class="campo full"><label for="msg">Mensagem</label><textarea id="msg" name="Mensagem" placeholder="Conte um pouco sobre a sua empresa ou sua dúvida"></textarea></div>
+          <div class="campo full"><label for="msg">Mensagem</label><textarea id="msg" name="Mensagem" placeholder="Conte um pouco sobre sua empresa ou sua dúvida"></textarea></div>
           <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
           <label class="lgpd"><input type="checkbox" id="lgpd" required> Autorizo a ASF Contabilidade a entrar em contato pelos dados informados. Seus dados são usados apenas para esse atendimento.</label>
           <div class="acoes full">
-            <button type="submit" class="btn btn-verde" id="btn-enviar">Enviar por e-mail</button>
-            <button type="button" class="btn btn-wpp" id="btn-wpp-form">Enviar pelo WhatsApp</button>
+            <button type="submit" class="btn btn-p" id="btn-enviar">Enviar por e-mail</button>
+            <button type="button" class="btn btn-w" id="btn-wpp-form"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><use href="#i-wpp"/></svg>Enviar no WhatsApp</button>
           </div>
         </div>
         <div class="msg" id="retorno" role="status"></div>
@@ -341,8 +470,8 @@
 <footer>
   <div class="wrap foot">
     <img src="assets/logo.png" alt="ASF Contabilidade">
-    <div><b>ASF Contabilidade</b> · São Paulo/SP · <span data-tel>(11) 97875-7407</span> · <span data-email>asfcontabil@asfcontabil.com.br</span></div>
-    <div>CRC/SP 349914/O-2 · © <span id="ano"></span></div>
+    <nav><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+    <div>ASF Contabilidade · São Paulo/SP · CRC/SP 349914/O-2 · © <span id="ano"></span></div>
   </div>
 </footer>
 
@@ -369,12 +498,26 @@
   document.querySelectorAll('[data-mail]').forEach(a => a.href = 'mailto:' + EMAIL);
   document.getElementById('ano').textContent = new Date().getFullYear();
 
+  // Menu
+  const menu = document.querySelector('.menu'), hamb = document.querySelector('.hamb');
+  hamb.addEventListener('click', () => { const a = menu.classList.toggle('aberto'); hamb.setAttribute('aria-expanded', a); });
+  menu.addEventListener('click', e => { if (e.target.closest('a')) { menu.classList.remove('aberto'); hamb.setAttribute('aria-expanded', false); } });
+  const topo = document.getElementById('topo');
+  addEventListener('scroll', () => topo.classList.toggle('rolou', scrollY > 10), {passive:true});
+
+  // Animação de entrada
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold:.12}) : null;
+  document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classList.add('on'));
+
+  // Links "Para quem" já marcam o interesse no formulário
+  document.querySelectorAll('[data-interesse]').forEach(a => a.addEventListener('click', () => {
+    const r = document.querySelector(`input[name="Interesse"][value="${a.dataset.interesse}"]`); if (r) r.checked = true;
+  }));
+
   const form = document.getElementById('form-contato');
   const retorno = document.getElementById('retorno');
   const btn = document.getElementById('btn-enviar');
-
   function mostrar(tipo, texto){ retorno.className = 'msg ' + tipo; retorno.textContent = texto; }
-
   function validar(){
     const nome = form.Nome.value.trim(), email = form['E-mail'].value.trim(), tel = form.Telefone.value.replace(/\D/g,'');
     if(!nome) return 'Informe o seu nome.';
@@ -388,7 +531,6 @@
     for (const [k,v] of f.entries()) if(!k.startsWith('_') && v) o[k] = v;
     return o;
   }
-
   form.Telefone.addEventListener('input', e => {
     let d = e.target.value.replace(/\D/g,'').slice(0,11);
     if(d.length > 6) e.target.value = `(${d.slice(0,2)}) ${d.slice(2, d.length-4)}-${d.slice(-4)}`;
